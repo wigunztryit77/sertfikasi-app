@@ -82,17 +82,24 @@
 
         <div class="container">
 
-            <a href="{{ route('dashboard') }}" class="navbar-brand fw-semibold">
-                Sertifikasi App
+            {{-- Logo + Nama Aplikasi --}}
+            <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center gap-2">
+
+                <img src="{{ asset('images/logo.png.png') }}" alt="Logo Perusahaan" class="company-logo">
+
+                <span class="fw-bold">
+                    
+                </span>
+
             </a>
 
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-
-                <button class="btn btn-light btn-sm px-3">
-                    Logout
-                </button>
-            </form>
+            <style>
+                .company-logo {
+                    width: 70px;
+                    height: 70px;
+                    object-fit: contain;
+                }
+            </style>
 
         </div>
 

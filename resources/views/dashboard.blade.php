@@ -13,21 +13,31 @@
 <body class="bg-light">
 
     <nav class="navbar navbar-dark bg-primary">
+
         <div class="container">
 
-            <span class="navbar-brand">
-                Sertifikasi App
-            </span>
+            {{-- Logo + Nama Aplikasi --}}
+            <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center gap-2">
 
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
+                <img src="{{ asset('images/logo.png.png') }}" alt="Logo Perusahaan" class="company-logo">
 
-                <button class="btn btn-light btn-sm">
-                    Logout
-                </button>
-            </form>
+                <span class="fw-bold">
+
+                </span>
+
+            </a>
+
+            <style>
+                .company-logo {
+                    width: 75px;
+                    height: 75px;
+                    object-fit: contain;
+                }
+            </style>
+
 
         </div>
+
     </nav>
 
     <div class="container py-5">

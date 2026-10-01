@@ -22,17 +22,29 @@
 
         <div class="container">
 
-            <a href="{{ route('home') }}" class="navbar-brand fw-bold">
+            {{-- Logo + Nama Aplikasi --}}
+            <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center gap-2">
 
-                Sertifikasi App
+                <img src="{{ asset('images/logo.png.png') }}" alt="Logo Perusahaan" class="company-logo">
+
+                <span class="fw-bold">
+                    
+                </span>
 
             </a>
 
+            <style>
+                .company-logo {
+                    width: 70px;
+                    height: 70px;
+                    object-fit: contain;
+                }
+            </style>
 
+
+            {{-- Login Admin --}}
             <a href="{{ route('login') }}" class="btn btn-light btn-sm">
-
-                🔐 Login Admin
-
+                Login Admin
             </a>
 
         </div>
@@ -81,7 +93,7 @@
 
                             <button type="submit" class="btn btn-primary w-100">
 
-                                🔍 Cari
+                                Search
 
                             </button>
 

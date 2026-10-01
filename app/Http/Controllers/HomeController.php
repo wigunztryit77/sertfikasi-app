@@ -11,13 +11,15 @@ class HomeController extends Controller
     {
         $query = Peserta::with('skemaSertifikasi');
 
-        // Search berdasarkan nama atau NIK
         if ($request->filled('search')) {
+
             $search = $request->search;
 
             $query->where(function ($q) use ($search) {
+
                 $q->where('nama', 'like', '%' . $search . '%')
                   ->orWhere('nik', 'like', '%' . $search . '%');
+
             });
         }
 
