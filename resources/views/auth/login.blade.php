@@ -34,38 +34,29 @@
                         {{-- Logo --}}
                         <div class="text-center mb-3">
 
-                            <img
-                                src="{{ asset('images/logo.png.png') }}"
-                                alt="Logo Perusahaan"
-                                class="company-logo"
-                            >
+                            <img src="{{ asset('images/logo.png.png') }}" alt="Logo Perusahaan" class="company-logo">
 
                             <h3 class="fw-bold mb-1">
                                 Sertifikasi App
                             </h3>
 
                             <p class="text-muted mb-0">
-                                Login Administrator
+                                Login Akun
                             </p>
 
                         </div>
 
-
                         {{-- Error --}}
                         @if ($errors->any())
-
                             <div class="alert alert-danger">
                                 {{ $errors->first() }}
                             </div>
-
                         @endif
-
 
                         {{-- Login Form --}}
                         <form method="POST" action="{{ route('login.process') }}">
 
                             @csrf
-
 
                             {{-- Email --}}
                             <div class="mb-3">
@@ -74,17 +65,10 @@
                                     Email
                                 </label>
 
-                                <input
-                                    type="email"
-                                    name="email"
-                                    class="form-control"
-                                    value="{{ old('email') }}"
-                                    placeholder="Masukkan email"
-                                    required
-                                >
+                                <input type="email" name="email" class="form-control" value="{{ old('email') }}"
+                                    placeholder="Masukkan email" required>
 
                             </div>
-
 
                             {{-- Password --}}
                             <div class="mb-3">
@@ -93,36 +77,27 @@
                                     Password
                                 </label>
 
-                                <input
-                                    type="password"
-                                    name="password"
-                                    class="form-control"
-                                    placeholder="Masukkan password"
-                                    required
-                                >
+                                <input type="password" name="password" class="form-control"
+                                    placeholder="Masukkan password" required>
 
                             </div>
 
-
                             {{-- Login --}}
-                            <button
-                                type="submit"
-                                class="btn btn-primary w-100"
-                            >
+                            <button type="submit" class="btn btn-primary w-100">
                                 Login
                             </button>
 
                         </form>
 
-
-                        {{-- Kembali ke Dashboard Peserta --}}
+                        {{-- Daftar Akun --}}
                         <div class="text-center mt-3">
 
-                            <a
-                                href="{{ route('home') }}"
-                                class="btn btn-outline-secondary w-100"
-                            >
-                                ← Kembali ke Dashboard Peserta
+                            <p class="text-muted mb-2">
+                                Belum memiliki akun?
+                            </p>
+
+                            <a href="{{ route('register') }}" class="btn btn-outline-primary w-100">
+                                Daftar Akun
                             </a>
 
                         </div>

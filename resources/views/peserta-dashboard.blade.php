@@ -17,39 +17,45 @@
 <body class="bg-light">
 
 
+
     {{-- Navbar --}}
     <nav class="navbar navbar-dark bg-primary">
-
         <div class="container">
 
             {{-- Logo + Nama Aplikasi --}}
             <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center gap-2">
-
                 <img src="{{ asset('images/logo.png.png') }}" alt="Logo Perusahaan" class="company-logo">
 
                 <span class="fw-bold">
-                    
+                    Sertifikasi App
+                </span>
+            </a>
+
+            {{-- Informasi User + Logout --}}
+            <div class="d-flex align-items-center gap-3">
+                <span class="text-white">
+                    Halo, {{ auth()->user()->name }}
                 </span>
 
-            </a>
-
-            <style>
-                .company-logo {
-                    width: 70px;
-                    height: 70px;
-                    object-fit: contain;
-                }
-            </style>
-
-
-            {{-- Login Admin --}}
-            <a href="{{ route('login') }}" class="btn btn-light btn-sm">
-                Login Admin
-            </a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-light btn-sm">
+                        Logout
+                    </button>
+                </form>
+            </div>
 
         </div>
-
     </nav>
+
+    <style>
+        .company-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+    </style>
+
 
 
 

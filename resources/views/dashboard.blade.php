@@ -12,33 +12,39 @@
 
 <body class="bg-light">
 
-    <nav class="navbar navbar-dark bg-primary">
 
+    <nav class="navbar navbar-dark bg-primary">
         <div class="container">
 
             {{-- Logo + Nama Aplikasi --}}
-            <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center gap-2">
+            <a href="{{ route('dashboard') }}" class="navbar-brand d-flex align-items-center gap-2">
 
                 <img src="{{ asset('images/logo.png.png') }}" alt="Logo Perusahaan" class="company-logo">
 
-                <span class="fw-bold">
-
-                </span>
+                
 
             </a>
 
-            <style>
-                .company-logo {
-                    width: 75px;
-                    height: 75px;
-                    object-fit: contain;
-                }
-            </style>
+            {{-- Tombol Logout --}}
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
 
+                <button type="submit" class="btn btn-light btn-sm">
+                    Logout
+                </button>
+            </form>
 
         </div>
-
     </nav>
+
+    <style>
+        .company-logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+        }
+    </style>
+
 
     <div class="container py-5">
 
