@@ -26,9 +26,7 @@
             <a href="{{ route('home') }}" class="navbar-brand d-flex align-items-center gap-2">
                 <img src="{{ asset('images/logo.png.png') }}" alt="Logo Perusahaan" class="company-logo">
 
-                <span class="fw-bold">
-                    Sertifikasi App
-                </span>
+                
             </a>
 
             {{-- Informasi User + Logout --}}

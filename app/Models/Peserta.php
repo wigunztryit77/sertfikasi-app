@@ -32,4 +32,5 @@ class Peserta extends Model
             'skema_sertifikasi_id'
         );
     }
+    
 }
